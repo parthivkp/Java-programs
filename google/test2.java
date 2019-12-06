@@ -1,35 +1,33 @@
 package google;
+import java.util.*;
 
 
 
-class Test{
-	public static void main(String args[]) { 
+class Test{ 
+	public static void main(String args[]) { int i,n;
+	Scanner sc=new Scanner(System.in);
+	System.out.println("enter number of faculty");
+	n=sc.nextInt();
 	
 	
-	ise ob1=new ise();
-	ise ob2=new ise();
-	ise ob3=new ise();
-	try {
-		System.out.println("enter the details of faculty 1");
-		ob1.readdata();
-	} catch(AgeException e) {
-		System.out.println("caught exception of faculty 1"+e.getMessage()+e);
+	
+	ise[] ob=new ise[5]; 
+	for(i=1;i<=n;i++) {
+		ob[i]=new ise();
+		System.out.println("enter the details of faculty"+i);
+		try {
+			
+		ob[i].readdata();
+		}catch(AgeException e) {
+			System.out.println("caught "+e); }
+			
+		
+	}for(int j=1;j<=n;j++) {
+		System.out.println("printing......");
+		
+		ob[j].print();
 	}
-	try {
-		System.out.println("enter the details of faculty 2");
-		ob2.readdata();
-	} catch(AgeException e) {
-		System.out.println("caught exception of faculty 2 "+e.getMessage()+e);
+	
+	
 	}
-	try {
-		System.out.println("enter the details of faculty 3");
-		ob3.readdata();
-	} catch(AgeException e) {
-		System.out.println("caught exception of faculty 3"+e.getMessage()+e);
-	} System.out.println("Details of faculty Above 20 years of experience...printing...");{
-		ob1.print();
-		ob2.print();
-		ob3.print();
-	}
-}
 }
